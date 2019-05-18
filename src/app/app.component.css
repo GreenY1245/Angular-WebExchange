@@ -1,0 +1,12 @@
+#main {
+    padding: 20px;
+}
+
+#main-wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar-brand, .nav-item {
+    font-weight: bold;
+}

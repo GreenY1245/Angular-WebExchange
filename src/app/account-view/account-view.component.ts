@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import keypair from 'keypair';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-view',
@@ -8,11 +9,23 @@ import keypair from 'keypair';
 })
 export class AccountViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(router:Router) {
+
+    if (!this.isLoggedIn()) {
+      router.navigate(['account/login']);
+    }
+  }
 
   ngOnInit() {
-    const pair = keypair();
-    console.log(pair)
+  }
+
+  isLoggedIn() {
+    
+    if (localStorage.getItem('user')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
