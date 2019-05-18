@@ -20,12 +20,7 @@ export class AccountViewComponent implements OnInit {
   }
 
   isLoggedIn() {
-    
-    if (localStorage.getItem('user')) {
-      return true;
-    } else {
-      return false;
-    }
+    return localStorage.getItem('user') ? true : false;
   }
 
 }

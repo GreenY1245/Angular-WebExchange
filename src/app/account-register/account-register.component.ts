@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-account-register',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountRegisterComponent implements OnInit {
 
-  constructor() { }
+  user:User = { _id:'', username:'', email:'', password:'', wallet:'' }
+
+  constructor(private accountService:AccountService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  tryRegister(): void {
+
+    this.accountService.register(this.user).subscribe(user => {
+      
+      this.route.queryParams.subscribe(params => {
+        this.router.navigate([params['returnUrl'] || 'account/login']);
+      })
+    })
   }
 
 }
