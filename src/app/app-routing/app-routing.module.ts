@@ -6,12 +6,13 @@ import { LandingComponent } from '../landing/landing.component'
 import { AccountLoginComponent } from '../account-login/account-login.component';
 import { AccountRegisterComponent } from '../account-register/account-register.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
-
+import { AccountLogoutComponent } from '../account-logout/account-logout.component'
 
 const routes: Routes = [
   { path: 'account', component: AccountViewComponent },
   { path: 'login', component: AccountLoginComponent },
   { path: 'register', component: AccountRegisterComponent },
+  { path: 'logout', component: AccountLogoutComponent },
   { path: '', component: LandingComponent },
   { path: '**', component: NotFoundComponent }
 ];

@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'AJK-webExchange';
+
+  isLoggedIn() {
+    return localStorage.getItem('user') ? true : false;
+  }
 }

@@ -13,6 +13,7 @@ import { AccountRegisterComponent } from './account-register/account-register.co
 import { NotFoundComponent } from './not-found/not-found.component'
 
 import { HttpClientModule } from '@angular/common/http';
+import { AccountLogoutComponent } from './account-logout/account-logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     LandingComponent,
     AccountLoginComponent,
     AccountRegisterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AccountLogoutComponent
   ],
   imports: [
     BrowserModule,

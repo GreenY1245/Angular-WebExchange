@@ -42,11 +42,6 @@ export class AccountService {
     )
   }
 
-  logout() {
-
-    localStorage.removeItem('user');
-  }
-
   registerAsWorker() {
     
     const headers = new HttpHeaders();
