@@ -22,7 +22,7 @@ export class AccountRegisterComponent implements OnInit {
     this.accountService.register(this.user).subscribe(user => {
       
       this.route.queryParams.subscribe(params => {
-        this.router.navigate([params['returnUrl'] || 'account/login']);
+        this.router.navigate([params['returnUrl'] || 'login']);
       })
     })
   }

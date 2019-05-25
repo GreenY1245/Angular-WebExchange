@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms'
+
 import { AppComponent } from './app.component';
 import { AccountViewComponent } from './account-view/account-view.component';
 
@@ -9,6 +11,8 @@ import { LandingComponent } from './landing/landing.component';
 import { AccountLoginComponent } from './account-login/account-login.component';
 import { AccountRegisterComponent } from './account-register/account-register.component';
 import { NotFoundComponent } from './not-found/not-found.component'
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { NotFoundComponent } from './not-found/not-found.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

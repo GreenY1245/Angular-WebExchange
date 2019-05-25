@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import keypair from 'keypair';
 import { Router } from '@angular/router';
+import { AccountService } from '../account.service'
 
 @Component({
   selector: 'app-account-view',
@@ -9,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AccountViewComponent implements OnInit {
 
-  constructor(router:Router) {
+  constructor(private accountService:AccountService, private router:Router) {
 
     if (!this.isLoggedIn()) {
-      router.navigate(['account/login']);
+      router.navigate(['login']);
     }
   }
 

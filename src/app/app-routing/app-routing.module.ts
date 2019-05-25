@@ -9,14 +9,9 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 
 
 const routes: Routes = [
-  {
-    path: 'account', 
-    children : [
-      { path: '', pathMatch: 'full', component: AccountViewComponent },
-      { path: 'login', component: AccountLoginComponent },
-      { path: 'register', component: AccountRegisterComponent }
-    ]
-  },
+  { path: 'account', component: AccountViewComponent },
+  { path: 'login', component: AccountLoginComponent },
+  { path: 'register', component: AccountRegisterComponent },
   { path: '', component: LandingComponent },
   { path: '**', component: NotFoundComponent }
 ];

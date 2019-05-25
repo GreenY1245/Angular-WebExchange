@@ -1,3 +1,19 @@
-<p>
-  account-register works!
-</p>
+
+
+<div id="wrapper">
+
+  <form>
+
+    <input [(ngModel)]="user.username" type="text" class="form-control" id="username" name="username" required autofocus placeholder="Username" />
+
+    <input [(ngModel)]="user.email" type="email" class="form-control" id="email" name="email" required placeholder="Email" />
+
+    <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password" required placeholder="Password" />
+
+    <input type="submit" class="btn btn-success" value="Register" (click)="tryRegister()" />
+  </form>
+
+
+</div>
+
+<p>Want to <b>login</b> instead? Click <a routerLink="/login" routerLinkActive="active" >here!</a></p>

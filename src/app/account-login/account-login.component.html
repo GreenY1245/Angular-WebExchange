@@ -2,12 +2,15 @@
 
 <div id="wrapper">
 
-  <form (ngSubmit)="tryLogin()" >
+  <form>
 
-    <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username" />
-    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" />
+    <input [(ngModel)]="user.username" type="text" class="form-control" id="username" name="username" required autofocus placeholder="Username" />
+    <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password" required placeholder="Password" />
 
-    <input type="submit" class="btn btn-success" value="Login" />
+    <input type="submit" class="btn btn-success" value="Login" (click)="tryLogin()" />
   </form>
 
+
 </div>
+
+<p>Want to <b>register</b> instead? Click <a routerLink="/register" routerLinkActive="active" >here!</a></p>

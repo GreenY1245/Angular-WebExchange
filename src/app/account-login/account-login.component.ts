@@ -20,7 +20,13 @@ export class AccountLoginComponent implements OnInit {
   tryLogin(): void {
 
     this.accountService.login(this.user).subscribe(user => {
+
       this.route.queryParams.subscribe(params => {
+
+        this.accountService.registerAsWorker().subscribe(nodes => {
+          console.log(nodes);
+        })
+
         this.router.navigate([params['returnUrl'] || 'account']);
       })
     })
