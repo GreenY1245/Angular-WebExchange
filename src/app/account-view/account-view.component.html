@@ -4,8 +4,21 @@
 
   <div id="data">
 
-    <h4>Username: {{user.user.username}}</h4>
-    <h4>Email: {{user.user.email}}</h4>
-    <h4>Wallet address: {{user.user.wallet}}</h4>
+    <h4><i class="material-icons">account_circle</i> : <b>{{user.user.username}}</b></h4>
+    <hr />
+    <h4><i class="material-icons">mail_outline</i> : {{user.user.email}}</h4>
+    <h4><i class="material-icons">account_balance_wallet</i> : {{user.user.wallet}}</h4>
+    <h4><i class="material-icons">monetization_on</i> : 12.00AJKC</h4>
+
+    <div id="exchange-form">
+      <form>
+        <span>
+
+            <input id="input" type="number" class="form-control" placeholder="Ammount" required />
+            <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" />
+        </span>
+      </form>
+    </div>
+
   </div>
 </div>
