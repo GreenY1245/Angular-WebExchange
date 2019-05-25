@@ -1,18 +1,18 @@
 
 <div id="main-wrapper">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#" routerLink="/" routerLinkActive="router-link-active" >WebExchange</a>
+    <a class="navbar-brand" href="#" routerLink="/" routerLinkActive="router-link-active" >WebExchange <i class="material-icons">public</i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/account" routerLinkActive="active"  >Account</a>
+          <a class="nav-link" href="#" routerLink="/account" routerLinkActive="active" ><i class="material-icons">perm_identity</i> Account</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" class="nav-link" href="#" routerLink="/logout" routerLinkActive="active"  >Logout</a>
+          <a *ngIf="isLoggedIn()" class="nav-link" href="#" routerLink="/logout" routerLinkActive="active" ><i class="material-icons">lock_open</i> Logout</a>
         </li>
       </ul>
     </div>
