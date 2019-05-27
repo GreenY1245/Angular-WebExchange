@@ -11,7 +11,8 @@ import { switchMap } from 'rxjs/operators';
 })
 export class UserViewComponent implements OnInit {
 
-  user:User = { _id:'', username:'', email:'', password:'', wallet:'', public:'', private:'' }
+  user:User = { _id:'', username:'', email:'', password:'', wallet:'', public:'', private:'', credit:0, lastWalletBlock:'' }
+  wallet:any = { wallet:'', ammount:0 }
 
   constructor(private accountService:AccountService, private router:Router, private activatedRoute:ActivatedRoute) { }
 
@@ -23,7 +24,18 @@ export class UserViewComponent implements OnInit {
   getUser() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.accountService.getUser(id).subscribe(user => this.user = user);
+    this.accountService.getUser(id).subscribe(user => {
+      this.user = user
+      this.getWalletBlock();
+    });
+
+  }
+
+  getWalletBlock() {
+
+    this.accountService.getWalletBlock(this.user.wallet).subscribe(wallet => {
+      this.wallet = wallet;
+    })
   }
 
 }

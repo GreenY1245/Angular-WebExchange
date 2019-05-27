@@ -10,6 +10,10 @@
     font-size: 2em;
 }
 
+p {
+    font-size: 0.5em;
+}
+
 #data {
     display: block;
 }
@@ -19,21 +23,33 @@
     font-size: 1.3em;
 }
 
-#exchange-form {
+#exchange-form, #add-money-form {
 
-    padding-top: 75px;
+    padding-top: 50px;
 }
 
-span {
+#exchange-span {
     display: inline-flex;
     max-width: 100vw;
     min-width: 50vw;
+
+    justify-items: baseline;
+    align-items: baseline;
 }
 
-#input, #submit {
+#add-money-span {
+    display: inline-flex;
+    max-width: 50vw;
+    min-width: 25vw;
+
+    justify-items: baseline;
+    align-items: baseline;
+}
+
+#input-source, #input-destination, #input, #submit {
     border-radius: 0px;
 }
 
-#input {
+#input-source, #input-destination, #input {
     text-align: end;
 }

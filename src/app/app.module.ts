@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AccountLogoutComponent } from './account-logout/account-logout.component';
 import { UserViewComponent } from './user-view/user-view.component';
 
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { UserViewComponent } from './user-view/user-view.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

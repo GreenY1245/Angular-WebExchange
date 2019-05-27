@@ -96,5 +96,12 @@ export class AccountService {
     )
 
   }
+
+  getExchangeData(): Observable<any> {
+
+    const currentDate = new Date().toISOString().substring(1, 10);
+
+    return null;
+  }
   
 }

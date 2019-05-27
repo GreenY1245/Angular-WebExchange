@@ -2,23 +2,31 @@
 
 <div id="wrapper">
 
-  <div id="data">
-
-    <h4><i class="material-icons">account_circle</i> : <b>{{user.username}}</b></h4>
-    <hr />
-    <h4><i class="material-icons">mail_outline</i> : {{user.email}}</h4>
-    <h4><i class="material-icons">account_balance_wallet</i> : {{user.wallet}}</h4>
-    <h4><i class="material-icons">monetization_on</i> : 12.00AJKC</h4>
-
-    <div id="exchange-form">
-      <form>
-        <span>
-
-            <input id="input" type="number" class="form-control" placeholder="Ammount" required />
-            <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" />
-        </span>
-      </form>
+    <div id="data">
+  
+      <h4><i class="material-icons">account_circle</i> : <b>{{user.username}}</b></h4>
+      <hr />
+      
+      <h4><i class="material-icons">mail_outline</i> : {{user.email}}</h4>
+      <h4><i class="material-icons">account_balance_wallet</i> : {{user.wallet}}</h4>
+  
+      <span id="AJKC-span">
+        <h4 style="padding-right: 10px;" ><i class="material-icons">monetization_on</i> : {{wallet.ammount}} AJKC</h4>
+      </span>
+  
+      <hr />
+  
+      <div id="exchange-form">
+  
+        <h4>Exchange with user:</h4>
+        <form>
+          <span id="exchange-span">
+              <input id="input-source" name="source-input" type="number" class="form-control" placeholder="Your ammount" required />
+              <input id="input-destination" name="destination-input" type="number" class="form-control" placeholder="Their ammount" required />
+              <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" onclick="alert('exhcange')" />
+          </span>
+        </form>
+      </div>
+  
     </div>
-
   </div>
-</div>

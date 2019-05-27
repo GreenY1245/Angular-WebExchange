@@ -11,8 +11,9 @@ import { User } from '../user'
 })
 export class AccountViewComponent implements OnInit {
 
-  user:User = {_id:'', username:'', email:'', password:'', wallet:'', public:'', private:''};
+  user:User = {_id:'', username:'', email:'', password:'', wallet:'', public:'', private:'', credit:0, lastWalletBlock:''};
   wallet:any = { wallet:'', ammount:0 };
+  exchange:any = {};
 
   constructor(private accountService:AccountService, private router:Router) {}
 
@@ -32,11 +33,18 @@ export class AccountViewComponent implements OnInit {
 
   getWalletBlock() {
 
-    console.log(this.user.wallet)
+    console.log(this.user.lastWalletBlock)
 
-    this.accountService.getWalletBlock(this.user.wallet).subscribe(wallet => {
+    this.accountService.getWalletBlock(this.user.lastWalletBlock).subscribe(wallet => {
       this.wallet = wallet;
     })
+  }
+
+  getExchangeData() {
+
+    this.accountService.getExchangeData().subscribe(exchange => {
+      this.exchange = exchange;
+    });
   }
 
 }

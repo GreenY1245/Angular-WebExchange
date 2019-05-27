@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router'
 })
 export class AccountLoginComponent implements OnInit {
 
-  user:User = { _id:'', username:'', email:'', password:'', wallet:'', public:'', private:'' }
+  user:User = { _id:'', username:'', email:'', password:'', wallet:'', public:'', private:'', credit:0, lastWalletBlock:'' }
 
   constructor(private accountService:AccountService, private route:ActivatedRoute, private router:Router) { }
 
@@ -23,9 +23,11 @@ export class AccountLoginComponent implements OnInit {
 
       this.route.queryParams.subscribe(params => {
 
+        /*
         this.accountService.registerAsWorker().subscribe(nodes => {
           console.log(nodes);
         })
+        */
 
         this.router.navigate([params['returnUrl'] || 'account']);
       })
