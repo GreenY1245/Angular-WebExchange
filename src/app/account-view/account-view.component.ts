@@ -11,22 +11,32 @@ import { User } from '../user'
 })
 export class AccountViewComponent implements OnInit {
 
-  user:User = {_id:'', username:'', email:'', password:'', wallet:''};
+  user:User = {_id:'', username:'', email:'', password:'', wallet:'', public:'', private:''};
+  wallet:any = { wallet:'', ammount:0 };
 
-  constructor(private accountService:AccountService, private router:Router) {
-
-    if (!this.isLoggedIn()) {
-      router.navigate(['login']);
-    } else {
-      this.user = JSON.parse(localStorage.getItem('user'));
-    }
-  }
+  constructor(private accountService:AccountService, private router:Router) {}
 
   ngOnInit() {
+
+    if (!this.isLoggedIn()) {
+      this.router.navigate(['login']);
+    } else {
+      this.user = JSON.parse(localStorage.getItem('user'));
+      this.getWalletBlock();
+    }
   }
 
   isLoggedIn() {
     return localStorage.getItem('user') ? true : false;
+  }
+
+  getWalletBlock() {
+
+    console.log(this.user.wallet)
+
+    this.accountService.getWalletBlock(this.user.wallet).subscribe(wallet => {
+      this.wallet = wallet;
+    })
   }
 
 }

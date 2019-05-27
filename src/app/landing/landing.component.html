@@ -1,5 +1,14 @@
 <div id="wrapper">
 
-  <h4>Landing wrapper</h4>
+  <h1>Landing wrapper</h1>
+  <hr />
+
+  <h2>Users: </h2>
+
+  <div class="user" *ngFor="let user of users">
+
+      <h5><a href="#" [routerLink]="['/user/', user._id]" routerLinkActive="active"  >{{user.username}}</a></h5>
+
+  </div>
 
 </div>

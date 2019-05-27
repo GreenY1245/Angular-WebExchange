@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  users:User[]
+
+  constructor(private accountService:AccountService) { }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers() {
+
+    this.accountService.getUsers().subscribe(users => {
+      this.users = users;
+    })
   }
 
 }

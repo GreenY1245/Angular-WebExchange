@@ -4,4 +4,6 @@ export class User {
     password:string;
     email:string;
     wallet:string;
+    public:string;
+    private:string;
 }

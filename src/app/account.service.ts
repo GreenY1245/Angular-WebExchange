@@ -60,5 +60,41 @@ export class AccountService {
       })
     )
   }
+
+  getUsers(): Observable<User[]> {
+
+    const headers = new HttpHeaders();
+
+    return this.http.get<User[]>(AccountService.userHost + 'users/').pipe(
+      map(users => {
+        if (users) {
+          return users;
+        }
+      })
+    )
+  }
+
+  getUser(_id:string): Observable<User> {
+
+    return this.http.get<User>(AccountService.userHost + 'users/' + _id).pipe(
+      map(user => {
+        if (user) {
+          return user;
+        }
+      })
+    )
+  }
+
+  getWalletBlock(wallet:string): Observable<any> {
+
+    return this.http.get<any>("http://127.0.0.1:3000/blockchain/wallet/" + wallet).pipe(
+      map(wallet => {
+        if (wallet) {
+          return wallet;
+        }
+      })
+    )
+
+  }
   
 }

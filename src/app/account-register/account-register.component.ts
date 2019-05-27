@@ -10,7 +10,7 @@ import { AccountService } from '../account.service';
 })
 export class AccountRegisterComponent implements OnInit {
 
-  user:User = { _id:'', username:'', email:'', password:'', wallet:'' }
+  user:User = { _id:'', username:'', email:'', password:'', wallet:'', public:'', private:'' }
 
   constructor(private accountService:AccountService, private route:ActivatedRoute, private router:Router) { }
 
