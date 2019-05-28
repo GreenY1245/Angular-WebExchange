@@ -20,12 +20,34 @@ export class OrderService {
     const headers = new HttpHeaders();
 
     return this.http.get<Order[]>(OrderService.apiUrl + 'orders/').pipe(
-      map(users => {
-        if (users) {
-          return users;
+      map(orders => {
+        if (orders) {
+          return orders;
         } else {
           return [];
         }
+      })
+    );
+  }
+
+  getOpenOrders() : Observable<Order[]> {
+    const headers = new HttpHeaders();
+
+    return this.http.get<Order[]>(OrderService.apiUrl + 'orders/open').pipe(
+      map(orders => {
+        if (orders) {
+          return orders;
+        } else {
+          return [];
+        }
+      })
+    );
+  }
+
+  placeOrder(newOrder) {
+    return this.http.post(OrderService.apiUrl + 'orders/', newOrder).pipe(
+      map(res => {
+        return res;
       })
     );
   }
