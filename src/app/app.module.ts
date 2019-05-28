@@ -17,6 +17,7 @@ import { AccountLogoutComponent } from './account-logout/account-logout.componen
 import { UserViewComponent } from './user-view/user-view.component';
 
 import { ChartsModule } from 'ng2-charts';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChartsModule } from 'ng2-charts';
     AccountRegisterComponent,
     NotFoundComponent,
     AccountLogoutComponent,
-    UserViewComponent
+    UserViewComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

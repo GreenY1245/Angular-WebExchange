@@ -8,11 +8,13 @@ import { AccountRegisterComponent } from '../account-register/account-register.c
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { AccountLogoutComponent } from '../account-logout/account-logout.component';
 import { UserViewComponent } from '../user-view/user-view.component';
+import { OrdersComponent } from '../orders/orders.component';
 
 const routes: Routes = [
   { path: 'account', component: AccountViewComponent },
   { path: 'user/:id', component: UserViewComponent },
   { path: 'login', component: AccountLoginComponent },
+  { path: 'orders', component: OrdersComponent },
   { path: 'register', component: AccountRegisterComponent },
   { path: 'logout', component: AccountLogoutComponent },
   { path: '', component: LandingComponent },
