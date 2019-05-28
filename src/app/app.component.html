@@ -12,6 +12,9 @@
           <a class="nav-link" href="#" routerLink="/account" routerLinkActive="active" ><i class="material-icons">perm_identity</i> Account</a>
         </li>
         <li class="nav-item">
+            <a *ngIf="isLoggedIn()" class="nav-link" href="#" routerLink="/orders" routerLinkActive="active" ><i class="material-icons">swap_horiz</i> Orders</a>
+          </li>
+        <li class="nav-item">
           <a *ngIf="isLoggedIn()" class="nav-link" href="#" routerLink="/logout" routerLinkActive="active" ><i class="material-icons">lock_open</i> Logout</a>
         </li>
       </ul>
