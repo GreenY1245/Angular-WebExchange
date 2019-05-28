@@ -33,7 +33,7 @@ export class UserViewComponent implements OnInit {
 
   getWalletBlock() {
 
-    this.accountService.getWalletBlock(this.user.wallet).subscribe(wallet => {
+    this.accountService.getWalletBlock(this.user.lastWalletBlock).subscribe(wallet => {
       this.wallet = wallet;
     })
   }

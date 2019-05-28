@@ -97,11 +97,56 @@ export class AccountService {
 
   }
 
-  getExchangeData(): Observable<any> {
+  getExchangeData(date?:string): Observable<any> {
 
-    const currentDate = new Date().toISOString().substring(1, 10);
+    if (!date) {
+      date = new Date().toISOString().substring(1, 10);
+    }
 
-    return null;
+    return this.http.get<any>("http://data.fixer.io/api/" + date + "?access_key=3d82bc870f74ed5632fff4eca335e915&symbols=USD,GBP&base=EUR").pipe(
+      map(data => {
+        if (data) {
+          return data;
+        }
+      })
+    )
+  }
+
+  purchaseCoins(ammount:number, user:User): Observable<User> {
+
+    const headers = new HttpHeaders();
+
+    const purchase = {
+      user: user,
+      ammount: ammount
+    }
+
+    return this.http.post<User>(AccountService.userHost + 'users/coins/', purchase, { headers, withCredentials: true }).pipe(
+      map(user => {
+        if (user) {
+          return user;
+        }
+      })
+    )
+  }
+
+  exchange(user:User, destinationWallet:string, ammount:number): Observable<User> {
+
+    const headers = new HttpHeaders();
+
+    const purchase = {
+      user: user,
+      destinationWallet: destinationWallet,
+      ammount: ammount
+    }
+
+    return this.http.post<User>(AccountService.userHost + 'users/exchange/', purchase, { headers, withCredentials: true }).pipe(
+      map(user => {
+        if (user) {
+          return user;
+        }
+      })
+    )
   }
   
 }

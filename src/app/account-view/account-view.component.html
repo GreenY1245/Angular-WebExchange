@@ -11,7 +11,7 @@
     <h4><i class="material-icons">account_balance_wallet</i> : {{user.wallet}}</h4>
 
     <span id="AJKC-span">
-      <h4 style="padding-right: 10px;" ><i class="material-icons">monetization_on</i> : {{wallet.ammount}} AJKC</h4>
+      <h4><i class="material-icons">monetization_on</i> : {{wallet.ammount}} AJKC</h4>
     </span>
 
     <hr />
@@ -21,10 +21,12 @@
       <h4>Exchange with user:</h4>
       <form>
         <span id="exchange-span">
-            <input id="input-source" name="source-input" type="number" class="form-control" placeholder="Your ammount" required />
-            <input id="input-destination" name="destination-input" type="number" class="form-control" placeholder="Their ammount" required />
-            <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" onclick="alert('exhcange')" />
+            <input id="input-destination-wallet" name="destination-wallet-input" type="text" class="form-control" placeholder="Destination account" required [(ngModel)]="destinationWallet" [ngModelOptions]="{standalone:true}" />
+            <input id="input-destination-ammount" name="destination-ammount-input" type="number" class="form-control" placeholder="Your ammount" required [(ngModel)]="destinationAmmount" [ngModelOptions]="{standalone:true}" />
+            <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" (click)="exchangeCoins()" />
         </span>
+        <h6 *ngIf="exchangeResult">Transaction successful</h6>
+        <h6 *ngIf="exchangeResult === false">Transaction failed</h6>
       </form>
     </div>
 
@@ -36,10 +38,25 @@
       <p>Current exchange rate: 1 AJK : 2 EUR</p>
       <form>
         <span id="add-money-span">
-            <input id="input" type="number" class="form-control" placeholder="Ammount" required />
-            <input id="submit" type="submit" class="btn btn-outline-dark" value="Add money" onclick="alert('add')" />
+            <input id="input" type="number" [(ngModel)]="total" [ngModelOptions]="{standalone:true}"  class="form-control" placeholder="Ammount" required />
+            <input id="submit" type="submit" class="btn btn-outline-dark" value="Buy coins" (click)="purchaseCoins()" />
         </span>
+
+        <p id="add-money-total">You pay: {{total * 2}}€</p>
       </form>
+
+      <div style="display: block;">
+        <canvas baseChart width="100%" height="35%"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+
     </div>
 
   </div>

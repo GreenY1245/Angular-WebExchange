@@ -1,6 +1,6 @@
 #wrapper {
 
-    height: 75vh;
+    height: 100vh;
 
     display: flex;
     align-items: center;
@@ -39,11 +39,15 @@ p {
 
 #add-money-span {
     display: inline-flex;
-    max-width: 50vw;
-    min-width: 25vw;
+    width: 100%;
 
     justify-items: baseline;
     align-items: baseline;
+}
+
+#input {
+    max-width: 100%;
+    min-width: 50%;
 }
 
 #input-source, #input-destination, #input, #submit {
@@ -52,4 +56,11 @@ p {
 
 #input-source, #input-destination, #input {
     text-align: end;
+}
+
+#add-money-total {
+    color: green;
+    font-weight: bold;
+
+    float: right;
 }
