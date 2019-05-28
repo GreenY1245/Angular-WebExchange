@@ -33,7 +33,7 @@ export class AccountViewComponent implements OnInit {
       this.getWalletBlock();
     }
 
-    //this.getExchangeData();
+    this.getExchangeData();
   }
 
   isLoggedIn() {
