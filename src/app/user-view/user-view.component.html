@@ -21,8 +21,7 @@
         <h4>Exchange with user:</h4>
         <form>
           <span id="exchange-span">
-              <input id="input-source" name="source-input" type="number" class="form-control" placeholder="Your ammount" required />
-              <input id="input-destination" name="destination-input" type="number" class="form-control" placeholder="Their ammount" required />
+              <input id="input-source" name="source-input" type="number" class="form-control" placeholder="Your ammount" required [(ngModel)]="ammount" [ngModelOptions]="{standalone:true}"  />
               <input id="submit" type="submit" class="btn btn-outline-dark" value="Exchange" onclick="alert('exhcange')" />
           </span>
         </form>
